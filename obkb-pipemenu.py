@@ -53,12 +53,14 @@ def keyboard():
         key = k.get("key")
         action_element = k.find(strRoot+"action")
         strTxt=""
+        strType=""
         if action_element!=None:
             arrShortcut.append((key,"",""))
             if action_element.get("name")=="Execute":
                 name_element=action_element.find(strRoot + "name")
                 command_element=action_element.find(strRoot + "command")
                 exec_element=action_element.find(strRoot + "execute")
+                strType="x "  # flag for pipemenu menu "name=Execute"
 
                 if name_element != None:
                     strTxt=name_element.text
@@ -73,19 +75,19 @@ def keyboard():
                 action_name=action_element.get("name")
                 if action_name!=None:
                     strTxt=action_name
-
-            arrShortcut[len(arrShortcut)-1]=(key,strTxt)
+            if strType != "x ":
+                strType="o "
+            arrShortcut[len(arrShortcut)-1]=(strType,key,strTxt)
 
 
 def output_keybinds(arrShortcut):
     """loop through array, and format output
         then write to file"""
     for i in range(0,len(arrShortcut)):
-        keybinding=str(arrShortcut[i][0])
-        execute=str(arrShortcut[i][1])
-        if len(execute)>80 :
-            execute=execute[:75]+"....."
-        line = "{:<15}".format(keybinding) + "\t" + execute
+        exe=str(arrShortcut[i][0])
+        keybinding=str(arrShortcut[i][1])
+        execute=str(arrShortcut[i][2])
+        line = exe + "{:<15}".format(keybinding) + "\t" + execute
         print(line)
         write_file(line)
 
@@ -124,3 +126,4 @@ if __name__ == "__main__":
         Check the filepath given: " + rc_fpath + "\n"
         print msg
         sys.exit(1)
+
