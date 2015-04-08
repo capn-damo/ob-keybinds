@@ -53,7 +53,7 @@ def keyboard():
         key = k.get("key")
         action_element = k.find(strRoot+"action")
         strTxt=""
-        strType=""
+        strType="o "
         if action_element!=None:
             arrShortcut.append((key,"",""))
             if action_element.get("name")=="Execute":
@@ -75,8 +75,6 @@ def keyboard():
                 action_name=action_element.get("name")
                 if action_name!=None:
                     strTxt=action_name
-            if strType != "x ":
-                strType="o "
             arrShortcut[len(arrShortcut)-1]=(strType,key,strTxt)
 
 
