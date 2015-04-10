@@ -6,7 +6,7 @@
 # The script is used by bl-kb-pipemenu to pipe the output to the Openbox menu
 #
 # Based on a script by wlourf 07/03/2010
-# <http://u-stripts.blogspot.com/2010/03/how-to-display-openboxs-shortcuts.html>
+# <http://u-scripts.blogspot.com/2010/03/how-to-display-openboxs-shortcuts.html>
 #
 # The original script parsed the keyboard and mouse commands from
 # rc.xml, and passed them to Conkys to display on screen
