@@ -12,8 +12,9 @@
 # rc.xml, and passed them to Conkys to display on screen
 #
 # April 2015
-#   : This script outputs the keyboard keybinds to terminal or
-#     with a "--gui" argument will display the output in a text window
+#   : This script outputs the keyboard keybinds to terminal or, with 
+#     a "--gui" argument will display the output in a text window as well
+#
 #   : Written for use by BunsenLabs Linux bl-kb-pipemenu by <damo>
 #
 ########################################################################
